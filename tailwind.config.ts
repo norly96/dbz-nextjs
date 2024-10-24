@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        saiyansans: ["var(--font-saiyan-sans)"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
