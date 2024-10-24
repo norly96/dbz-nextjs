@@ -2,6 +2,7 @@ import Image from "next/image";
 import icon from "@/app/favicon.ico";
 import Link from "next/link";
 import NavItem from "./NavItem";
+import { ToggleDarkMode } from "./DarkMode";
 
 const navItems = [
   { path: "/personajes", text: "Personajes" },
@@ -22,6 +23,7 @@ const Navbar = () => {
       </Link>
 
       <div className="flex gap-4">
+        <ToggleDarkMode />
         {navItems.map((item) => (
           <NavItem key={item.text} path={item.path} text={item.text} />
         ))}
