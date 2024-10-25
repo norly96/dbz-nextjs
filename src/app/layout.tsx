@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${saiyanSans.className} antialiased h-screen dark:bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] dark:from-slate-950 dark:via-slate-900 dark:to-gray-800 bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-white via-orange-200 to-orange-300`}
+        className={`${saiyanSans.className} antialiased h-screen py-4 px-8 dark:bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] dark:from-slate-950 dark:via-slate-900 dark:to-gray-800 bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-white via-orange-200 to-orange-300`}
       >
         <Navbar />
         {children}
