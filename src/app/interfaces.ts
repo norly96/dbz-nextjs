@@ -1,9 +1,3 @@
-export interface CharacterResponse {
-  items: Character[];
-  meta: MetaResponse;
-  links: LinksResponse;
-}
-
 export interface Character {
   id: number;
   name: string;
@@ -13,20 +7,14 @@ export interface Character {
   gender: string;
   description: string;
   image: string;
-  afiliation: string;
+  affiliation: string;
+  originPlanet: Planet;
 }
 
-export interface MetaResponse {
-  totalItems: number;
-  itemCount: number;
-  itemsPerPage: number;
-  totalPages: number;
-  currentPage: number;
-}
-
-export interface LinksResponse {
-  first: string;
-  previous: string;
-  next: string;
-  last: string;
+export interface Planet {
+  id: number;
+  name: string;
+  isDestroyed: boolean;
+  description: string;
+  image: string;
 }
