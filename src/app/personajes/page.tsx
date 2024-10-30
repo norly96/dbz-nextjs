@@ -1,5 +1,11 @@
 import ItemCharacter from "@/components/Characters/ItemCharacter";
 import { Character } from "../interfaces";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "DBZ-Personajes",
+  description: "Descubre los personajes del universo de Dragon Ball Z",
+};
 
 const CharactersPage = async () => {
   let data = await fetch("https://dragonball-api.com/api/characters?limit=58");

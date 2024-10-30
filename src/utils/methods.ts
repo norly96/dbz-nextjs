@@ -1,5 +1,13 @@
 import { Character } from "@/app/interfaces";
 
+export const kiChange = (character: Character) => {
+  if (character.ki === "unknown") return "Desconocido";
+  else return character.ki;
+};
+export const maxkiChange = (character: Character) => {
+  if (character.maxKi === "unknown") return "Desconocido";
+  else return character.maxKi;
+};
 export const genderChange = (character: Character) => {
   if (character.gender === "Male") return "Masculino";
   else if (character.gender === "Female") return "Femenino";

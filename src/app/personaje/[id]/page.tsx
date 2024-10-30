@@ -3,7 +3,13 @@ import { Character } from "../../interfaces";
 import Image from "next/image";
 import background from "@/assets/back.svg";
 import Link from "next/link";
-import { affiliationChange, genderChange, raceChange } from "@/utils/methods";
+import {
+  affiliationChange,
+  genderChange,
+  kiChange,
+  maxkiChange,
+  raceChange,
+} from "@/utils/methods";
 import ItemsTransformation from "@/components/Characters/ItemsTransformation";
 
 interface Props {
@@ -74,7 +80,7 @@ const CharacterPage = async (props: Props) => {
                   Ki:
                 </h3>
                 <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
-                  {character.ki}
+                  {kiChange(character)}
                 </p>
               </div>
               <div className="flex items-center">
@@ -82,7 +88,7 @@ const CharacterPage = async (props: Props) => {
                   Ki Máximo:
                 </h3>
                 <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
-                  {character.maxKi}
+                  {maxkiChange(character)}
                 </p>
               </div>
               <div className="flex items-center">

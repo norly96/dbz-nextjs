@@ -9,7 +9,7 @@ interface CharacterProps {
 
 const ItemCharacter = ({ character }: CharacterProps) => {
   return (
-    <div className="relative flex flex-col w-96 items-center p-4">
+    <article className="relative flex flex-col w-96 items-center p-4">
       <Image
         src={background}
         width={100}
@@ -25,7 +25,7 @@ const ItemCharacter = ({ character }: CharacterProps) => {
           width={150}
           height={150}
           style={{ objectFit: "cover" }}
-          className="w-full h-full z-0 drop-shadow-[0_35px_35px_rgba(255,255,255,0.5)] hover:scale-110 transition-transform duration-300 "
+          className="w-full h-full blur-sm hover:blur-none z-0 drop-shadow-[0_35px_35px_rgba(255,255,255,0.5)] hover:scale-110 transition-transform duration-300 "
           quality={80}
           priority={false}
         />
@@ -36,7 +36,7 @@ const ItemCharacter = ({ character }: CharacterProps) => {
         {" "}
         {character.name}
       </h2>
-    </div>
+    </article>
   );
 };
 
