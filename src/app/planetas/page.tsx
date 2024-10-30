@@ -1,4 +1,3 @@
-import React from "react";
 import { Planet } from "../interfaces";
 import ItemPlanet from "@/components/Characters/ItemPlanet";
 import { Metadata } from "next";

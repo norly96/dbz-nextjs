@@ -11,6 +11,7 @@ import {
   raceChange,
 } from "@/utils/methods";
 import ItemsTransformation from "@/components/Characters/ItemsTransformation";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -31,11 +32,12 @@ const getCharacter = async (id: string): Promise<Character> => {
     let character = await fetch(
       `https://dragonball-api.com/api/characters/${id}`
     );
+    if (!character.ok) throw new Error("Personaje no encontrado");
     let char = await character.json();
 
     return char;
   } catch (error) {
-    throw new Error("Error");
+    notFound();
   }
 };
 
