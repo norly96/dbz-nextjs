@@ -14,14 +14,14 @@ const ItemCharacter = ({ character }: CharacterProps) => {
         src={background}
         width={100}
         height={100}
-        alt="background"
+        alt="Fondo"
         className="absolute top-0 left-0 object-cover w-full h-full shadow-lg rounded-xl"
       />
       {/* Imagen */}
       <Link href={`personaje/${character.id}`} className="w-auto h-96 z-10 ">
         <Image
           src={character.image}
-          alt={`Image of ${character.name}`}
+          alt={`Imagen de ${character.name}`}
           width={150}
           height={150}
           style={{ objectFit: "cover" }}

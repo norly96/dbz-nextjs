@@ -4,6 +4,7 @@ import Image from "next/image";
 import background from "@/assets/back.svg";
 import Link from "next/link";
 import { affiliationChange, genderChange, raceChange } from "@/utils/methods";
+import ItemsTransformation from "@/components/Characters/ItemsTransformation";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -37,14 +38,14 @@ const CharacterPage = async (props: Props) => {
   const character = await getCharacter(params.id);
 
   return (
-    <main className="flex flex-grow min-h-full mt-8 sm:p-10">
+    <main className="flex flex-col flex-grow min-h-full mt-8 sm:p-10">
       <section className=" relative flex w-full items-center p-4">
         {/* Fondo Imagen */}
         <Image
           src={background}
           width={100}
           height={100}
-          alt="background"
+          alt="Fondo"
           className="absolute top-0 left-0 object-cover w-full h-full shadow-lg rounded-xl"
         />
         <div className="flex flex-col lg:flex-row w-full items-center lg:items-start lg:my-8 lg:justify-between">
@@ -52,7 +53,7 @@ const CharacterPage = async (props: Props) => {
           <article className="z-10 w-2/3 lg:w-5/12 lg:ml-20 lg:h-[650px]">
             <Image
               src={character.image}
-              alt={`Image of ${character.name}`}
+              alt={`Imagen de ${character.name}`}
               width={150}
               height={150}
               className="w-full h-full z-0 object-cover lg:object-contain drop-shadow-[0_35px_35px_rgba(255,255,255,0.5)] hover:scale-110 transition-transform duration-300 "
@@ -63,7 +64,7 @@ const CharacterPage = async (props: Props) => {
 
           {/* Datos */}
           <article className="flex flex-col lg:ml-5 w-full lg:w-6/12 z-10">
-            <h2 className=" text-5xl mt-3 sm:text-7xl font-semibold capitalize text-center text-red-600  drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+            <h2 className=" text-5xl mt-3 sm:text-7xl font-semibold capitalize text-center text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
               {" "}
               {character.name}
             </h2>
@@ -130,7 +131,9 @@ const CharacterPage = async (props: Props) => {
           </article>
         </div>
       </section>
-      <section></section>
+      {character.transformations.length === 0 ? null : (
+        <ItemsTransformation character={character} />
+      )}
     </main>
   );
 };

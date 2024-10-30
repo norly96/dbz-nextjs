@@ -9,6 +9,7 @@ export interface Character {
   image: string;
   affiliation: string;
   originPlanet: Planet;
+  transformations: Transformation[];
 }
 
 export interface Planet {
@@ -17,4 +18,12 @@ export interface Planet {
   isDestroyed: boolean;
   description: string;
   image: string;
+}
+
+export interface Transformation {
+  id: number;
+  name: string;
+  image: string;
+  ki: string;
+  deletedAt: null;
 }
