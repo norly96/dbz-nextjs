@@ -1,7 +1,7 @@
 import { Character } from "../../interfaces";
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 const getCharacter = async (id: string): Promise<Character> => {
@@ -17,7 +17,8 @@ const getCharacter = async (id: string): Promise<Character> => {
   }
 };
 
-const CharacterPage = async ({ params }: Props) => {
+const CharacterPage = async (props: Props) => {
+  const params = await props.params;
   const character = await getCharacter(params.id);
   return (
     <main>
