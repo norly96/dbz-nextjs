@@ -37,7 +37,7 @@ const CharacterPage = async (props: Props) => {
   const character = await getCharacter(params.id);
 
   return (
-    <main className="flex flex-grow min-h-full p-10">
+    <main className="flex flex-grow min-h-full mt-8 sm:p-10">
       <section className=" relative flex w-full items-center p-4">
         {/* Fondo Imagen */}
         <Image
@@ -47,67 +47,80 @@ const CharacterPage = async (props: Props) => {
           alt="background"
           className="absolute top-0 left-0 object-cover w-full h-full shadow-lg rounded-xl"
         />
-        <div className="flex flex-wrap w-full justify-between">
+        <div className="flex flex-col lg:flex-row w-full items-center lg:items-start lg:my-8 lg:justify-between">
           {/* Imagen */}
-          <div className="z-10 ml-20">
+          <article className="z-10 w-2/3 lg:w-5/12 lg:ml-20 lg:h-[650px]">
             <Image
               src={character.image}
               alt={`Image of ${character.name}`}
               width={150}
               height={150}
-              style={{ objectFit: "cover" }}
-              className="w-full h-full z-0 drop-shadow-[0_35px_35px_rgba(255,255,255,0.5)] hover:scale-110 transition-transform duration-300 "
+              className="w-full h-full z-0 object-cover lg:object-contain drop-shadow-[0_35px_35px_rgba(255,255,255,0.5)] hover:scale-110 transition-transform duration-300 "
               quality={80}
               priority={false}
             />
-          </div>
+          </article>
 
           {/* Datos */}
-          <article className="flex flex-col w-6/12 z-10">
-            <h2 className="text-7xl font-semibold capitalize text-center text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+          <article className="flex flex-col lg:ml-5 w-full lg:w-6/12 z-10">
+            <h2 className=" text-5xl mt-3 sm:text-7xl font-semibold capitalize text-center text-red-600  drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
               {" "}
               {character.name}
             </h2>
-            <div className="flex flex-col">
+            <div className="flex flex-col px-1 sm:px-4 lg:items-start">
               <div className="flex items-center">
-                <h3 className="text-2xl text-red-600">Ki:</h3>
-                <p className="text-lg font-mono ml-2 font-bold ">
+                <h3 className="text-xl lg:text-2xl text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                  Ki:
+                </h3>
+                <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
                   {character.ki}
                 </p>
               </div>
               <div className="flex items-center">
-                <h3 className="text-2xl text-red-600">Ki Máximo:</h3>
-                <p className="text-lg font-mono ml-2 font-bold ">
+                <h3 className="text-xl lg:text-2xl text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                  Ki Máximo:
+                </h3>
+                <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
                   {character.maxKi}
                 </p>
               </div>
               <div className="flex items-center">
-                <h3 className="text-2xl text-red-600">Raza:</h3>
-                <p className="text-lg font-mono ml-2 font-bold ">
+                <h3 className="text-xl lg:text-2xl text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                  Raza:
+                </h3>
+                <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
                   {raceChange(character)}
                 </p>
               </div>
               <div className="flex items-center">
-                <h3 className="text-2xl text-red-600">Género:</h3>
-                <p className="text-lg font-mono ml-2 font-bold ">
+                <h3 className="text-xl lg:text-2xl text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                  Género:
+                </h3>
+                <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
                   {genderChange(character)}
                 </p>
               </div>
               <div className="flex items-center">
-                <h3 className="text-2xl text-red-600">Afiliación:</h3>
-                <p className="text-lg font-mono ml-2 font-bold ">
+                <h3 className="text-xl lg:text-2xl text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                  Afiliación:
+                </h3>
+                <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
                   {affiliationChange(character)}
                 </p>
               </div>
               <div className="flex items-center">
-                <h3 className="text-2xl text-red-600">Planeta de origen:</h3>
-                <p className="text-lg font-mono ml-2 font-bold ">
+                <h3 className="text-xl lg:text-2xl text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                  Planeta de origen:
+                </h3>
+                <p className="text-sm lg:text-lg font-mono ml-2 font-bold ">
                   {character.originPlanet.name}
                 </p>
               </div>
               <div className="flex items-start">
-                <div className="text-lg">
-                  <span className="text-2xl text-red-600">Descripción:</span>
+                <div className="text-sm lg:text-lg max-w-full lg:w-full">
+                  <span className="text-xl lg:text-2xl text-red-600 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                    Descripción:
+                  </span>
                   <span className="font-mono ml-2 font-bold">
                     {character.description}
                   </span>
