@@ -1,8 +1,20 @@
+import { Metadata } from "next";
 import { Character } from "../../interfaces";
+import { describe } from "node:test";
 
 interface Props {
   params: Promise<{ id: string }>;
 }
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const character = await getCharacter((await params).id);
+  return {
+    title: `#${character.id} - Personaje ${character.name}`,
+    description: `Descripción de ${character.name}`,
+  };
+};
 
 const getCharacter = async (id: string): Promise<Character> => {
   try {
@@ -13,7 +25,7 @@ const getCharacter = async (id: string): Promise<Character> => {
 
     return char;
   } catch (error) {
-    throw new Error("");
+    throw new Error("Error");
   }
 };
 
