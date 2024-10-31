@@ -11,7 +11,7 @@ const navItems = [
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center">
+    <nav className="flex flex-col sm:flex-row gap-3 justify-center sm:justify-between items-center">
       <Link
         href="/"
         className="flex items-end hover:scale-105 transition-transform"
@@ -22,7 +22,7 @@ const Navbar = () => {
         </h1>
       </Link>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col items-center sm:items-stretch sm:flex-row sm:gap-4">
         <ToggleDarkMode />
         {navItems.map((item) => (
           <NavItem key={item.text} path={item.path} text={item.text} />
