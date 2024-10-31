@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DBZ Next.js
 
-## Getting Started
+Este proyecto es una aplicación web desarrollada con Next.js que consume la API de Dragon Ball. Permite explorar personajes y planetas del universo Dragon Ball, utilizando técnicas de renderizado del lado del servidor y generación de rutas estáticas.
 
-First, run the development server:
+## Características
+
+- **Lista de personajes:** Visualiza los personajes de Dragon Ball Z.
+- **Lista de planetas:** Explora los distintos planetas del universo.
+
+### Captura de Pantallas
+
+![](./public/1.png)
+
+![](./public/2.png)
+
+![](./public/3.png)
+
+![](./public/4.png)
+
+### Enlaces
+
+Deploy by Vercel
+
+- Site URL: [DBZ-NextJs](https://dbz-nextjs.vercel.app/)
+
+## Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/norly96/dbz-nextjs.git
+
+   ```
+
+2. Navega al directorio del proyecto:
+
+```bash
+cd dbz-nextjs
+```
+
+3. Instala las dependencias:
+
+```bash
+npm install
+```
+
+5. Inicia el servidor
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologías utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. HTML, CSS, TypeScript, [NextJS](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. API: [Dragon Ball API](https://web.dragonball-api.com/documentation)
 
-## Learn More
+## Contacto
 
-To learn more about Next.js, take a look at the following resources:
+Nombre: Norluis Galvez Sanchez
+Website: [Norly96](https://norly96.com)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GitHub: [Norly96](https://github.com/norly96)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Linkedin: [Norly96](https://www.linkedin.com/in/norly96)
