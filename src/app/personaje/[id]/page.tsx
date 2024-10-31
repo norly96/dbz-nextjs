@@ -52,6 +52,7 @@ const getCharacter = async (id: string): Promise<Character> => {
     const char = await character.json();
     return char;
   } catch (error) {
+    console.log(error);
     notFound();
   }
 };
