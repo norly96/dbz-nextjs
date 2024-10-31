@@ -8,8 +8,10 @@ export const metadata: Metadata = {
 };
 
 const CharactersPage = async () => {
-  let data = await fetch("https://dragonball-api.com/api/characters?limit=58");
-  let char = await data.json();
+  const data = await fetch(
+    "https://dragonball-api.com/api/characters?limit=58"
+  );
+  const char = await data.json();
 
   return (
     <main className="flex flex-wrap gap-5 min-h-full mt-8 justify-center p-4">

@@ -15,7 +15,10 @@ const ItemsTransformation = ({ character }: CharacterProps) => {
 
       <article className="flex flex-wrap justify-center gap-4">
         {character.transformations.map((trans) => (
-          <div className="relative flex flex-col w-96 items-center p-4">
+          <div
+            key={trans.id}
+            className="relative flex flex-col w-96 items-center p-4"
+          >
             <Image
               src={background}
               width={100}

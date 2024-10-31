@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { Character } from "../../interfaces";
 import Image from "next/image";
 import background from "@/assets/back.svg";
-import Link from "next/link";
 import {
   affiliationChange,
   genderChange,
@@ -17,6 +16,23 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
+//build time
+export const generateStaticParams = async () => {
+  const response = await fetch(
+    "https://dragonball-api.com/api/characters?limit=58"
+  );
+  const characters = await response.json();
+
+  // Extraer solo los IDs de los personajes
+  const charIDs58 = characters.items.map(
+    (character: Character) => character.id
+  );
+
+  return charIDs58.map((id: number) => ({
+    id: id.toString(),
+  }));
+};
+
 export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
@@ -29,12 +45,11 @@ export const generateMetadata = async ({
 
 const getCharacter = async (id: string): Promise<Character> => {
   try {
-    let character = await fetch(
+    const character = await fetch(
       `https://dragonball-api.com/api/characters/${id}`
     );
     if (!character.ok) throw new Error("Personaje no encontrado");
-    let char = await character.json();
-
+    const char = await character.json();
     return char;
   } catch (error) {
     notFound();
